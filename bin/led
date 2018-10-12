@@ -5,6 +5,7 @@ descriptions = {
   'new' => new_description
 }
 general_description = 'Limbo EDitor'
+descriptions.default = general_description
 if subcommand == 'new'
   puts descriptions['new']
 else
