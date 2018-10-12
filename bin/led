@@ -7,7 +7,7 @@ descriptions = {
 general_description = 'Limbo EDitor'
 descriptions.default = general_description
 if subcommand == 'new'
-  puts descriptions['new']
+  puts descriptions[subcommand]
 else
   puts descriptions.default
 end
