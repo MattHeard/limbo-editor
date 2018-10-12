@@ -1,9 +1,12 @@
 #!/usr/bin/env ruby
 subcommand = ARGV[0]
 new_description = 'creates a new project'
+descriptions = {
+  'new' => new_description
+}
 general_description = 'Limbo EDitor'
 if subcommand == 'new'
-  puts new_description
+  puts descriptions['new']
 else
   puts general_description
 end
