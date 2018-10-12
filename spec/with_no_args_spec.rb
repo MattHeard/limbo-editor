@@ -1,7 +1,11 @@
 describe 'with no args' do
+  let(:bin_location) do
+    '/Users/matthew.heard/Development/Personal/limbo_editor/bin/led'
+  end
+
+  let(:invocation) { system(bin_location) }
+
   it 'can be run' do
-    bin_location = '/Users/matthew.heard/Development/Personal/limbo_editor/bin/led'
-    invocation = system(bin_location)
     expect(invocation).to be_truthy
   end
 end
