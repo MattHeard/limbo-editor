@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
-subcommand = ARGV[0]
+
 descriptions = {
   'new' => 'creates a new project'
 }
-general_description = 'Limbo EDitor'
-descriptions.default = general_description
+descriptions.default = 'Limbo EDitor'
+
+subcommand = ARGV[0]
 puts descriptions[subcommand]
