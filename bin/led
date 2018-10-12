@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 
 descriptions = {
-  'new' => 'creates a new project'
+  'new' => 'creates a new project',
+  'list-tests' => 'lists test descriptions'
 }
 descriptions.default = 'Limbo EDitor'
 
