@@ -5,7 +5,7 @@ describe 'calling the program with no args' do
 
   let(:invocation) { %x(#{bin_location}) }
 
-  it 'describes itself' do
+  it 'describes the program' do
     expect(invocation).to eq "Limbo EDitor\n"
   end
 end
