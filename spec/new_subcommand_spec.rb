@@ -3,7 +3,7 @@ describe 'the new subcommand' do
     '/Users/matthew.heard/Development/Personal/limbo_editor/bin/led'
   end
 
-  let(:invocation) { %x("#{bin_location} new") }
+  let(:invocation) { %x(#{bin_location} new) }
 
   it 'describes itself' do
     invocation
