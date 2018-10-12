@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-if ARGV[0] == 'new'
+subcommand = ARGV[0]
+if subcommand == 'new'
   puts 'creates a new project'
 else
   puts 'Limbo EDitor'
