@@ -9,5 +9,5 @@ descriptions.default = general_description
 if subcommand == 'new'
   puts descriptions['new']
 else
-  puts general_description
+  puts descriptions.default
 end
