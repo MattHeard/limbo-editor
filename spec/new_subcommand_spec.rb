@@ -6,6 +6,6 @@ describe 'the new subcommand' do
   let(:invocation) { %x(#{bin_location} new) }
 
   it 'describes itself' do
-    invocation
+    expect(invocation).to eq "creates a new project\n"
   end
 end
