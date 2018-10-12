@@ -8,4 +8,8 @@ describe 'with no args' do
   it 'can be run' do
     expect(invocation).to be_truthy
   end
+
+  it 'describes itself' do
+    expect(invocation).to eq "Limbo EDitor\n"
+  end
 end
