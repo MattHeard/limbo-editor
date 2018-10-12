@@ -3,9 +3,17 @@ describe 'the list-tests subcommand' do
     '/Users/matthew.heard/Development/Personal/limbo_editor/bin/led'
   end
 
-  let(:invocation) { %x(#{bin_location} list-tests) }
-
   context 'without args' do
+    let(:invocation) { %x(#{bin_location} list-tests) }
+
+    it 'describes itself' do
+      expect(invocation).to eq "lists test descriptions\n"
+    end
+  end
+
+  context 'with a --help flag' do
+    let(:invocation) { %x(#{bin_location} list-tests --help) }
+
     it 'describes itself' do
       expect(invocation).to eq "lists test descriptions\n"
     end
