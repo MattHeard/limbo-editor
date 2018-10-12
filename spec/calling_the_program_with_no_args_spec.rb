@@ -1,4 +1,4 @@
-describe 'with no args' do
+describe 'calling the program with no args' do
   let(:bin_location) do
     '/Users/matthew.heard/Development/Personal/limbo_editor/bin/led'
   end
