@@ -18,7 +18,9 @@ describe 'the list-tests subcommand' do
         end
       end
 
-      it { is_expected.to eq (features.join("\n") + "\n") }
+      context "when the features are #{features.join(', ')}" do
+        it { is_expected.to eq (features.join("\n") + "\n") }
+      end
     end
   end
 
