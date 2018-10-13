@@ -45,8 +45,12 @@ def features
   matches.map { |m| m[1] }
 end
 
+def list_features
+  puts features.join("\n")
+end
+
 if list_tests? || help?
   describe_subcommand
 else
-  puts features.join("\n")
+  list_features
 end
