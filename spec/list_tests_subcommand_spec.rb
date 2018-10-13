@@ -8,29 +8,32 @@ describe 'the list-tests subcommand' do
 
     context 'lists the top level test descriptions' do
       test_dir = './tmp/spec'
-      let(:test_dir) { test_dir }
 
-      before do
-        system("mkdir -p #{test_dir}")
-        features.each do |feature|
-          File.open("#{test_dir}/#{feature}_spec.rb", "w") do |file|
-            file.puts "describe '#{feature}'"
+      context "when the test directory is #{test_dir}" do
+        let(:test_dir) { test_dir }
+
+        before do
+          system("mkdir -p #{test_dir}")
+          features.each do |feature|
+            File.open("#{test_dir}/#{feature}_spec.rb", "w") do |file|
+              file.puts "describe '#{feature}'"
+            end
           end
         end
-      end
 
-      after do
-        system("rm -r #{test_dir}")
-      end
+        after do
+          system("rm -r #{test_dir}")
+        end
 
-      [
-        %w[first],
-        %w[first second third]
-      ].each do |features|
-        context "when the features are #{features.join(', ')}" do
-          let(:features) { features }
+        [
+          %w[first],
+          %w[first second third]
+        ].each do |features|
+          context "when the features are #{features.join(', ')}" do
+            let(:features) { features }
 
-          it { is_expected.to eq (features.join("\n") + "\n") }
+            it { is_expected.to eq (features.join("\n") + "\n") }
+          end
         end
       end
     end
