@@ -12,5 +12,6 @@ if subcommand != 'list-tests' || ARGV[1] == '--help'
 else
   features = %w[first second third]
   descriptions = features.map { |f| "describe '#{f}'" }
+  matches = descriptions.map { |d| d.match(/describe '(.*)'/) }
   puts features.join("\n")
 end
