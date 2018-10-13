@@ -2,9 +2,15 @@
 
 class Subcommand
   def description
+    descriptions['new']
+  end
+
+  private
+
+  def descriptions
     {
       'new' => 'creates a new project'
-    }['new']
+    }
   end
 end
 
