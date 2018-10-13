@@ -10,7 +10,7 @@ def descriptions
 end
 
 def subcommand
-  ARGV[0]
+  ARGV.first
 end
 
 if subcommand != 'list-tests' || ARGV[1] == '--help'
