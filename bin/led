@@ -28,7 +28,7 @@ end
 def subcommand_descriptions
   subcommand_descriptions = {
     'new' => Subcommand.new('new').description,
-    'list-tests' => 'lists test descriptions'
+    'list-tests' => Subcommand.new('list-tests').description
   }
   subcommand_descriptions.default = 'Limbo EDitor'
   subcommand_descriptions
