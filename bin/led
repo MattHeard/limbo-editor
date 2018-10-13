@@ -6,7 +6,11 @@ class Subcommand
   }.freeze
 
   def description
-    descriptions['new']
+    descriptions[name]
+  end
+
+  def name
+    'new'
   end
 
   private
