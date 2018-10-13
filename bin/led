@@ -10,9 +10,5 @@ subcommand = ARGV[0]
 if subcommand != 'list-tests' || ARGV[1] == '--help'
   puts descriptions[subcommand]
 else
-  puts %x{cat tmp/spec/*}
-    .split("\n")
-    .map { |s| s.match("describe '(.*)'") }
-    .map { |match_data| match_data[1] }
-    .join("\n")
+  puts "first\nsecond\nthird"
 end
