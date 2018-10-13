@@ -16,11 +16,14 @@ describe 'the list-tests subcommand' do
         end
       end
 
-      features = %w[first second third]
-      context "when the features are #{features.join(', ')}" do
-        let(:features) { features }
+      [
+        %w[first second third]
+      ].each do |features|
+        context "when the features are #{features.join(', ')}" do
+          let(:features) { features }
 
-        it { is_expected.to eq (features.join("\n") + "\n") }
+          it { is_expected.to eq (features.join("\n") + "\n") }
+        end
       end
     end
   end
