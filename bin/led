@@ -9,7 +9,10 @@ def descriptions
   descriptions
 end
 
-subcommand = ARGV[0]
+def subcommand
+  subcommand = ARGV[0]
+end
+
 if subcommand != 'list-tests' || ARGV[1] == '--help'
   puts descriptions[subcommand]
 else
