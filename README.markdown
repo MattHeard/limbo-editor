@@ -23,7 +23,6 @@ A semantic editor for Ruby projects for playing with Limbo and TDD
 ## Limbo on the Cheap
 
     $ alias test="./bin/rspec -fd"
-    $ alias commit="git add .; git commit -m working; git pull --rebase;
-git push"
+    $ alias commit="git add .; git commit -m working; git pull --rebase; git push"
     $ alias revert="git reset --hard"
     $ alias tcr="test && commit || revert"
