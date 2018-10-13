@@ -67,10 +67,9 @@ def features
 end
 
 class FeatureSet
-end
-
-def list_features
-  puts features.join("\n")
+  def print_list(features)
+    puts features.join("\n")
+  end
 end
 
 def list_features?
@@ -78,7 +77,7 @@ def list_features?
 end
 
 if list_features?
-  list_features
+  FeatureSet.new.print_list(features)
 else
   show_help
 end
