@@ -5,7 +5,6 @@ describe 'the list-tests subcommand' do
 
   context 'without args' do
     features = %w[first second third]
-    let(:features) { features }
     subject(:invocation) { %x(#{bin_location} list-tests) }
 
     context 'lists the top level test descriptions' do
@@ -19,6 +18,8 @@ describe 'the list-tests subcommand' do
       end
 
       context "when the features are #{features.join(', ')}" do
+        let(:features) { features }
+
         it { is_expected.to eq (features.join("\n") + "\n") }
       end
     end
