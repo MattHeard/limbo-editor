@@ -41,9 +41,12 @@ def matches
   feature_descriptions.map { |d| d.match(/describe '(.*)'/) }
 end
 
+def features
+  matches.map { |m| m[1] }
+end
+
 if list_tests? || help?
   describe_subcommand
 else
-  features = matches.map { |m| m[1] }
   puts features.join("\n")
 end
