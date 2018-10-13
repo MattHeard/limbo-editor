@@ -11,5 +11,6 @@ if subcommand != 'list-tests' || ARGV[1] == '--help'
   puts descriptions[subcommand]
 else
   features = %w[first second third]
+  descriptions = features.map { |f| "describe '#{f}'" }
   puts features.join("\n")
 end
