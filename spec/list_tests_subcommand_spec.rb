@@ -6,8 +6,7 @@ describe 'the list-tests subcommand' do
   context 'without args' do
     let(:invocation) { %x(#{bin_location} list-tests) }
 
-    it 'describes itself' do
-      expect(invocation).to eq "lists test descriptions\n"
+    it 'lists the top level test descriptions' do
     end
   end
 
