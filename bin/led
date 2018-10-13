@@ -78,7 +78,11 @@ def show_help?
   not_list_tests? || help?
 end
 
-if show_help?
+def list_features?
+  !show_help?
+end
+
+unless list_features?
   show_help
 else
   list_features
