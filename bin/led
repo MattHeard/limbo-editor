@@ -17,7 +17,11 @@ def list_tests?
   subcommand != 'list-tests'
 end
 
-if list_tests? || ARGV[1] == '--help'
+def help?
+  ARGV[1] == '--help'
+end
+
+if list_tests? || help?
   puts descriptions[subcommand]
 else
   descriptions = %x{cat tmp/spec/*}.split("\n")
