@@ -7,17 +7,19 @@ describe 'the list-tests subcommand' do
     subject(:invocation) { %x(#{bin_location} list-tests) }
 
     context 'lists the top level test descriptions' do
+      let(:test_dir) { './tmp/spec' }
+
       before do
-        system("mkdir -p #{'./tmp/spec'}")
+        system("mkdir -p #{test_dir}")
         features.each do |feature|
-          File.open("#{'./tmp/spec'}/#{feature}_spec.rb", "w") do |file|
+          File.open("#{test_dir}/#{feature}_spec.rb", "w") do |file|
             file.puts "describe '#{feature}'"
           end
         end
       end
 
       after do
-        system("rm -r #{'./tmp/spec'}")
+        system("rm -r #{test_dir}")
       end
 
       [
