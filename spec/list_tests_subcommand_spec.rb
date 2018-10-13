@@ -8,13 +8,14 @@ describe 'the list-tests subcommand' do
 
     it 'lists the top level test descriptions' do
       system('mkdir -p ./tmp/spec')
-      %w[first second third].each do |feature|
+      features = %w[first second third]
+      features.each do |feature|
         File.open("./tmp/spec/#{feature}_spec.rb", "w") do |file|
           file.puts "describe '#{feature}'"
         end
       end
 
-      expect(invocation).to eq (%w[first second third].join("\n") + "\n")
+      expect(invocation).to eq (features.join("\n") + "\n")
     end
   end
 
