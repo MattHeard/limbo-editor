@@ -21,8 +21,12 @@ def help?
   ARGV[1] == '--help'
 end
 
-if list_tests? || help?
+def describe_subcommand
   puts descriptions[subcommand]
+end
+
+if list_tests? || help?
+  describe_subcommand
 else
   descriptions = %x{cat tmp/spec/*}.split("\n")
   matches = descriptions.map { |d| d.match(/describe '(.*)'/) }
