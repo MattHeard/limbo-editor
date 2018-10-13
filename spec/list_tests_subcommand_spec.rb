@@ -21,6 +21,7 @@ describe 'the list-tests subcommand' do
       end
 
       [
+        %w[first],
         %w[first second third]
       ].each do |features|
         context "when the features are #{features.join(', ')}" do
