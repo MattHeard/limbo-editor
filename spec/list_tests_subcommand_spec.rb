@@ -7,7 +7,8 @@ describe 'the list-tests subcommand' do
     subject(:invocation) { %x(#{bin_location} list-tests) }
 
     context 'lists the top level test descriptions' do
-      let(:test_dir) { './tmp/spec' }
+      test_dir = './tmp/spec'
+      let(:test_dir) { test_dir }
 
       before do
         system("mkdir -p #{test_dir}")
