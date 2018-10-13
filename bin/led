@@ -49,7 +49,11 @@ def list_features
   puts features.join("\n")
 end
 
-if not_list_tests? || help?
+def describe_subcommand?
+  not_list_tests? || help?
+end
+
+if describe_subcommand?
   describe_subcommand
 else
   list_features
