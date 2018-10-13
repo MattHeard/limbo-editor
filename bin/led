@@ -13,5 +13,6 @@ else
   features = %w[first second third]
   descriptions = features.map { |f| "describe '#{f}'" }
   matches = descriptions.map { |d| d.match(/describe '(.*)'/) }
+  features = matches.map { |m| m[1] }
   puts features.join("\n")
 end
