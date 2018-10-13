@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
+class Subcommand
+end
+
 def subcommand_descriptions
   subcommand_descriptions = {
     'new' => 'creates a new project',
