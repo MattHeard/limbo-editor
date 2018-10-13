@@ -6,6 +6,7 @@ class Subcommand
   }.freeze
 
   def initialize(name)
+    @name = name
   end
 
   def description
