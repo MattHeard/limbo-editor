@@ -14,7 +14,7 @@ class Subcommand
   end
 
   def name
-    'new'
+    @name
   end
 
   private
