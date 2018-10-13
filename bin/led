@@ -1,11 +1,14 @@
 #!/usr/bin/env ruby
 
 class Subcommand
+  def description
+    'creates a new project'
+  end
 end
 
 def subcommand_descriptions
   subcommand_descriptions = {
-    'new' => 'creates a new project',
+    'new' => Subcommand.new.description,
     'list-tests' => 'lists test descriptions'
   }
   subcommand_descriptions.default = 'Limbo EDitor'
