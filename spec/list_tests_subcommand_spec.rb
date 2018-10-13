@@ -8,7 +8,7 @@ describe 'the list-tests subcommand' do
 
     context 'lists the top level test descriptions' do
       before do
-        system('mkdir -p ./tmp/spec')
+        system("mkdir -p ./tmp/spec")
         features.each do |feature|
           File.open("./tmp/spec/#{feature}_spec.rb", "w") do |file|
             file.puts "describe '#{feature}'"
@@ -17,7 +17,7 @@ describe 'the list-tests subcommand' do
       end
 
       after do
-        system('rm -r ./tmp/spec')
+        system("rm -r ./tmp/spec")
       end
 
       [
