@@ -19,3 +19,11 @@ A semantic editor for Ruby projects for playing with Limbo and TDD
   the changes, the smaller the risk of merge conflicts.  Changes are
   only committed if all tests pass.  All commits are pushed.  This is
   extreme trunk-based development.
+
+## Limbo on the Cheap
+
+    $ alias test="./bin/rspec -fd"
+    $ alias commit="git add .; git commit -m working; git pull --rebase;
+git push"
+    $ alias revert="git reset --hard"
+    $ alias tcr="test && commit || revert"
