@@ -66,6 +66,9 @@ def features
   matches.map { |m| m[1] }
 end
 
+class FeatureSet
+end
+
 def list_features
   puts features.join("\n")
 end
