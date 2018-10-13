@@ -1,6 +1,10 @@
 #!/usr/bin/env ruby
 
 class Subcommand
+  DESCRIPTIONS = {
+    'new' => 'creates a new project'
+  }.freeze
+
   def description
     descriptions['new']
   end
@@ -8,9 +12,7 @@ class Subcommand
   private
 
   def descriptions
-    {
-      'new' => 'creates a new project'
-    }
+    DESCRIPTIONS
   end
 end
 
