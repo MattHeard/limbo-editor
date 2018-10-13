@@ -13,6 +13,8 @@ describe 'the list-tests subcommand' do
           file.puts "describe '#{feature}'"
         end
       end
+
+      expect(invocation).to eq "first\nsecond\nthird\n"
     end
   end
 
