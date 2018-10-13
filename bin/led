@@ -38,10 +38,6 @@ def subcommand
   ARGV.first
 end
 
-def not_list_tests?
-  subcommand != 'list-tests'
-end
-
 def help?
   ARGV[1] == '--help'
 end
@@ -75,7 +71,7 @@ def list_features
 end
 
 def list_features?
-  !(subcommand != 'list-tests' || help?)
+  subcommand == 'list-tests' && !help?
 end
 
 if list_features?
