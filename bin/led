@@ -10,5 +10,5 @@ subcommand = ARGV[0]
 if subcommand != 'list-tests' || ARGV[1] == '--help'
   puts descriptions[subcommand]
 else
-  puts "first\nsecond\nthird"
+  puts %w[first second third].join("\n")
 end
