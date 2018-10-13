@@ -25,10 +25,13 @@ def describe_subcommand
   puts descriptions[subcommand]
 end
 
+def test_dir
+  './tmp/spec'
+end
+
 if list_tests? || help?
   describe_subcommand
 else
-  test_dir = './tmp/spec'
   test_contents = %x{cat #{test_dir}/*}
   descriptions = test_contents.split("\n")
   matches = descriptions.map { |d| d.match(/describe '(.*)'/) }
