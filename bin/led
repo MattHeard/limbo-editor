@@ -82,8 +82,8 @@ def list_features?
   !show_help?
 end
 
-unless list_features?
-  show_help
-else
+if list_features?
   list_features
+else
+  show_help
 end
