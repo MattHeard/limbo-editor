@@ -7,6 +7,12 @@ describe 'the list-tests subcommand' do
     let(:invocation) { %x(#{bin_location} list-tests) }
 
     it 'lists the top level test descriptions' do
+      system('mkdir -p ./tmp/spec')
+      %w[first second third].each do |feature|
+        File.open("./tmp/spec/#{feature}_spec.rb", "w") do |file|
+          file.puts "describe '#{feature}'"
+        end
+      end
     end
   end
 
