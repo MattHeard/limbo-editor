@@ -16,6 +16,10 @@ describe 'the list-tests subcommand' do
         end
       end
 
+      after do
+        system('rm -r ./tmp/spec')
+      end
+
       [
         %w[first second third]
       ].each do |features|
