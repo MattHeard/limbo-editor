@@ -2,7 +2,8 @@
 
 class Subcommand
   DESCRIPTIONS = {
-    'new' => 'creates a new project'
+    'new' => 'creates a new project',
+    'list-tests' => 'lists test descriptions'
   }.freeze
 
   def initialize(name)
