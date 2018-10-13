@@ -1,12 +1,12 @@
 #!/usr/bin/env ruby
 
-def descriptions
-  descriptions = {
+def subcommand_descriptions
+  subcommand_descriptions = {
     'new' => 'creates a new project',
     'list-tests' => 'lists test descriptions'
   }
-  descriptions.default = 'Limbo EDitor'
-  descriptions
+  subcommand_descriptions.default = 'Limbo EDitor'
+  subcommand_descriptions
 end
 
 def subcommand
@@ -22,7 +22,7 @@ def help?
 end
 
 def describe_subcommand
-  puts descriptions[subcommand]
+  puts subcommand_descriptions[subcommand]
 end
 
 def test_dir
@@ -36,8 +36,8 @@ end
 if list_tests? || help?
   describe_subcommand
 else
-  descriptions = test_contents.split("\n")
-  matches = descriptions.map { |d| d.match(/describe '(.*)'/) }
+  feature_descriptions = test_contents.split("\n")
+  matches = feature_descriptions.map { |d| d.match(/describe '(.*)'/) }
   features = matches.map { |m| m[1] }
   puts features.join("\n")
 end
