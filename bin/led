@@ -33,10 +33,13 @@ def test_contents
   %x{cat #{test_dir}/*}
 end
 
+def feature_descriptions
+  test_contents.split("\n")
+end
+
 if list_tests? || help?
   describe_subcommand
 else
-  feature_descriptions = test_contents.split("\n")
   matches = feature_descriptions.map { |d| d.match(/describe '(.*)'/) }
   features = matches.map { |m| m[1] }
   puts features.join("\n")
