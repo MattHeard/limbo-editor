@@ -16,9 +16,9 @@ A semantic editor for Ruby projects for playing with Limbo and TDD
 * *TDD*: (1) Write a failing test.  (2) Make the test pass.  (3)
   Refactor.
 * *Limbo*: How low can you go?  How small can you make each change?  The
-  the changes, the smaller the risk of merge conflicts.  Changes are
-  only committed if all tests pass.  All commits are pushed.  This is
-  extreme trunk-based development.
+  smaller the changes, the smaller the risk of merge conflicts.  Changes
+  are only committed if all tests pass.  All commits are pushed.  This
+  is extreme trunk-based development.
 
 ## Limbo on the Cheap
 
