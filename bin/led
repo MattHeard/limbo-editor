@@ -5,6 +5,9 @@ class Subcommand
     'new' => 'creates a new project'
   }.freeze
 
+  def initialize(name)
+  end
+
   def description
     descriptions[name]
   end
@@ -22,7 +25,7 @@ end
 
 def subcommand_descriptions
   subcommand_descriptions = {
-    'new' => Subcommand.new.description,
+    'new' => Subcommand.new(nil).description,
     'list-tests' => 'lists test descriptions'
   }
   subcommand_descriptions.default = 'Limbo EDitor'
