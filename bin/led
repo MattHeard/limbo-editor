@@ -7,4 +7,6 @@ descriptions = {
 descriptions.default = 'Limbo EDitor'
 
 subcommand = ARGV[0]
-puts descriptions[subcommand]
+if subcommand != 'list-tests' || ARGV[1] == '--help'
+  puts descriptions[subcommand]
+end
