@@ -67,9 +67,17 @@ def features
 end
 
 class FeatureSet
-  def print_list(features)
+  def initialize(features)
+    @features = features
+  end
+
+  def print_list
     puts features.join("\n")
   end
+
+  private
+
+  attr_reader :features
 end
 
 def list_features?
@@ -77,7 +85,7 @@ def list_features?
 end
 
 if list_features?
-  FeatureSet.new.print_list(features)
+  FeatureSet.new(features).print_list
 else
   show_help
 end
