@@ -14,7 +14,7 @@ describe 'the list-tests subcommand' do
         end
       end
 
-      expect(invocation).to eq "first\nsecond\nthird\n"
+      expect(invocation).to eq (%w[first second third].join("\n") + "\n")
     end
   end
 
