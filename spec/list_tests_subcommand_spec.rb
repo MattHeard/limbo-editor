@@ -7,8 +7,8 @@ describe 'the list-tests subcommand' do
     subject(:invocation) { %x(#{bin_location} list-tests) }
 
     context 'lists the top level test descriptions' do
-      [
-        './tmp/spec'
+      %w[
+        ./tmp/spec
       ].each do |test_dir|
         context "when the test directory is #{test_dir}" do
           let(:test_dir) { test_dir }
