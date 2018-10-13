@@ -28,7 +28,8 @@ end
 if list_tests? || help?
   describe_subcommand
 else
-  descriptions = %x{cat tmp/spec/*}.split("\n")
+  test_contents = %x{cat tmp/spec/*}
+  descriptions = test_contents.split("\n")
   matches = descriptions.map { |d| d.match(/describe '(.*)'/) }
   features = matches.map { |m| m[1] }
   puts features.join("\n")
