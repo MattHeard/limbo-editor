@@ -4,11 +4,11 @@ describe 'the list-tests subcommand' do
   end
 
   context 'without args' do
+    let(:features) { %w[first second third] }
     let(:invocation) { %x(#{bin_location} list-tests) }
 
     it 'lists the top level test descriptions' do
       system('mkdir -p ./tmp/spec')
-      features = %w[first second third]
       features.each do |feature|
         File.open("./tmp/spec/#{feature}_spec.rb", "w") do |file|
           file.puts "describe '#{feature}'"
