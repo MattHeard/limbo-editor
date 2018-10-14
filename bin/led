@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require_relative '../lib/subcommand'
+
 class Subcommand
   DESCRIPTIONS = {
     'new' => 'creates a new project',
