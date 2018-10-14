@@ -74,7 +74,11 @@ class FeatureSet
 
   private
 
-  attr_reader :feature_descriptions, :matches
+  attr_reader :feature_descriptions
+
+  def matches
+    feature_descriptions.map { |d| d.match(/describe '(.*)'/) }
+  end
 
   def features
     matches.map { |m| m[1] }
