@@ -50,21 +50,9 @@ def test_dir
   './tmp/spec'
 end
 
-def test_contents
-  %x{cat #{test_dir}/*}
-end
-
-def feature_descriptions
-  test_contents.split("\n")
-end
-
-def matches
-  feature_descriptions.map { |d| d.match(/describe '(.*)'/) }
-end
-
 class FeatureSet
-  def initialize(test_contents)
-    @test_contents = test_contents
+  def initialize(test_dir)
+    @test_dir = test_dir
   end
 
   def print_list
@@ -73,7 +61,7 @@ class FeatureSet
 
   private
 
-  attr_reader :test_contents
+  attr_reader :test_dir
 
   def features
     matches.map { |m| m[1] }
@@ -86,6 +74,10 @@ class FeatureSet
   def feature_descriptions
     test_contents.split("\n")
   end
+
+  def test_contents
+    %x{cat #{test_dir}/*}
+  end
 end
 
 def list_features?
@@ -93,7 +85,7 @@ def list_features?
 end
 
 def list_features
-  FeatureSet.new(test_contents).print_list
+  FeatureSet.new(test_dir).print_list
 end
 
 if list_features?
