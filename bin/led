@@ -67,8 +67,9 @@ def features
 end
 
 class FeatureSet
-  def initialize(features)
+  def initialize(features, matches = nil)
     @features = features
+    @matches = matches
   end
 
   def print_list
