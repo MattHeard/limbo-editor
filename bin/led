@@ -63,9 +63,8 @@ def matches
 end
 
 class FeatureSet
-  def initialize(matches, feature_descriptions = nil)
+  def initialize(feature_descriptions)
     @feature_descriptions = feature_descriptions
-    @matches = matches
   end
 
   def print_list
@@ -90,7 +89,7 @@ def list_features?
 end
 
 def list_features
-  FeatureSet.new(matches, feature_descriptions).print_list
+  FeatureSet.new(feature_descriptions).print_list
 end
 
 if list_features?
