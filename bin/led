@@ -78,7 +78,11 @@ class FeatureSet
 
   private
 
-  attr_reader :features, :matches
+  attr_reader :matches
+
+  def features
+    matches.map { |m| m[1] }
+  end
 end
 
 def list_features?
