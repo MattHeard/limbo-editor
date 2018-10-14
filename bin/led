@@ -86,7 +86,7 @@ def list_features?
 end
 
 if list_features?
-  FeatureSet.new(matches).print_list
+  FeatureSet.new(matches, feature_descriptions).print_list
 else
   show_help
 end
