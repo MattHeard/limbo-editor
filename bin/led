@@ -85,8 +85,12 @@ def list_features?
   subcommand == 'list-tests' && !help?
 end
 
-if list_features?
+def list_features
   FeatureSet.new(matches, feature_descriptions).print_list
+end
+
+if list_features?
+  list_features
 else
   show_help
 end
