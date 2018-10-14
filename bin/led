@@ -85,7 +85,11 @@ def list_features?
 end
 
 def list_features
-  FeatureSet.new(test_dir).print_list
+  feature_set.print_list
+end
+
+def feature_set
+  FeatureSet.new(test_dir)
 end
 
 if list_features?
