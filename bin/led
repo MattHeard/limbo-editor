@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/subcommand'
+require_relative '../lib/feature_set'
 
 def subcommand_descriptions
   subcommand_descriptions = {
