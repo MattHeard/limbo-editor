@@ -68,7 +68,6 @@ end
 
 class FeatureSet
   def initialize(features, matches = nil)
-    @features = features
     @matches = matches
   end
 
