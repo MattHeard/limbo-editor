@@ -77,7 +77,7 @@ class FeatureSet
 
   private
 
-  attr_reader :features
+  attr_reader :features, :matches
 end
 
 def list_features?
