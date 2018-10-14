@@ -62,10 +62,6 @@ def matches
   feature_descriptions.map { |d| d.match(/describe '(.*)'/) }
 end
 
-def features
-  matches.map { |m| m[1] }
-end
-
 class FeatureSet
   def initialize(matches, feature_descriptions = nil)
     @feature_descriptions = feature_descriptions
