@@ -67,7 +67,8 @@ def features
 end
 
 class FeatureSet
-  def initialize(matches)
+  def initialize(matches, feature_descriptions = nil)
+    @feature_descriptions = feature_descriptions
     @matches = matches
   end
 
@@ -77,7 +78,7 @@ class FeatureSet
 
   private
 
-  attr_reader :matches
+  attr_reader :feature_descriptions, :matches
 
   def features
     matches.map { |m| m[1] }
