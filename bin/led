@@ -67,7 +67,7 @@ def features
 end
 
 class FeatureSet
-  def initialize(matches = nil)
+  def initialize(matches)
     @matches = matches
   end
 
