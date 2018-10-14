@@ -63,8 +63,8 @@ def matches
 end
 
 class FeatureSet
-  def initialize(feature_descriptions, test_contents)
-    @feature_descriptions = feature_descriptions
+  def initialize(test_contents)
+    @test_contents = test_contents
   end
 
   def print_list
@@ -73,14 +73,18 @@ class FeatureSet
 
   private
 
-  attr_reader :feature_descriptions
+  attr_reader :test_contents
+
+  def features
+    matches.map { |m| m[1] }
+  end
 
   def matches
     feature_descriptions.map { |d| d.match(/describe '(.*)'/) }
   end
 
-  def features
-    matches.map { |m| m[1] }
+  def feature_descriptions
+    test_contents.split("\n")
   end
 end
 
@@ -89,7 +93,7 @@ def list_features?
 end
 
 def list_features
-  FeatureSet.new(feature_descriptions, test_contents).print_list
+  FeatureSet.new(test_contents).print_list
 end
 
 if list_features?
